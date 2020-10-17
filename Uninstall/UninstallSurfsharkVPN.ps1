@@ -82,11 +82,11 @@ function RunUninstall
     
     <# Uninstall Surfshark Application #>
     $MyApp = Get-WmiObject -Class Win32_Product -ErrorAction SilentlyContinue | Where-Object { $_.Name -eq "Surfshark" }
-    $MyApp.Uninstall()
+    $MyApp.Uninstall
 
     <# Uninstall Surfshark TAP Driver #>
     $MyApp = Get-WmiObject -Class Win32_Product -ErrorAction SilentlyContinue | Where-Object { $_.Name -eq "Surfshark TAP Driver Windows" }
-    $MyApp.Uninstall()
+    $MyApp.Uninstall
 
     $tapsurfshark = Get-WindowsDriver -Online -All | Where-Object {$_.CatalogFile -eq "tapsurfshark.cat"} | Select-Object Driver
     & pnputil /delete-driver $tapsurfshark.Driver /force
