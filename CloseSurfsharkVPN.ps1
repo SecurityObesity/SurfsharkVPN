@@ -41,7 +41,7 @@ Write-Host "`nSurfshark VPN - Secure your digital life`n"
 if (Test-Administrator)
 {
     Write-Host "Surfshark is being terminated..."
-    $ServNameArray = @('Surfshark Service')
+    $ServNameArray = @('Surfshark Service','Surfshark Shadowsocks Service')
 
     foreach ($curElement in $ServNameArray)
     {
